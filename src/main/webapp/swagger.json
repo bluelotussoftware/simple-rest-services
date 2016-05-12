@@ -1,0 +1,115 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Simple REST Services (simple-rest-services)",
+        "contact": {
+            "email": "info@bluelotussoftware.com"
+            },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+            }
+    },
+    "host": "code.bluelotussoftware.com",
+    "basePath": "/simple-services/webapi",
+    "tags": [
+        {
+            "name": "simple",
+            "description": "A simple set of REST services for use in integration testing."
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/v1/services": {
+            "get": {
+                "tags": [
+                    "simple"
+                ],
+                "summary": "This provides a basic entry point for testing based on setting a delay, or alternate response than 200 - OK.",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "response",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "sleep",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {},
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "headers": {},
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/services/{id}": {
+            "get": {
+                "tags": [
+                    "simple"
+                ],
+                "summary": "This provides an entry point for testing multiple path parameters which may be setup to delay a response, or provide an alternate response than 200 - OK.",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "response",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "sleep",
+                        "in": "query",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {},
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {},
+    "externalDocs": {
+       "description": "These services are designed to make it easier to perform integration and performance testing.",
+       "url": "http://code.bluelotussoftware.com/simple-services/webapi/application.wadl"
+    }
+}
