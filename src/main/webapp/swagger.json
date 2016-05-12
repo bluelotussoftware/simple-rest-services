@@ -110,6 +110,6 @@
     "definitions": {},
     "externalDocs": {
        "description": "These services are designed to make it easier to perform integration and performance testing.",
-       "url": "http://code.bluelotussoftware.com/simple-services/webapi/application.wadl"
+       "url": "https://github.com/bluelotussoftware/simple-rest-services"
     }
 }
